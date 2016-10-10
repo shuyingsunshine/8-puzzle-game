@@ -15,7 +15,7 @@
 #include <vector>
 using std::vector;
 
-int inversions(vector<int>::iterator beg, vector<int>::iterator end){
+int inversions(vector<int>::iterator beg, vector<int>::iterator end){ //modified mergesort to get inversion number
     if (beg + 1 == end) return 0;
     if (beg + 2 == end){
         if (*beg > *(beg+1)){
@@ -65,7 +65,7 @@ std::uniform_int_distribution<int> Board::get_distribution(int n){
 void Board::random_generate(){
     int random_board[size*size];
     random_board[0] = 1;
-    for (int i = 2; i <= size*size;++i){
+    for (int i = 2; i <= size*size;++i){ //uniformly randomly generate a permutation of [1,2,...,n*n] in O(n*n).
         std::uniform_int_distribution<int> my_dis = get_distribution(i);
         my_dis.reset();
         int temp = my_dis(generator);

@@ -1,0 +1,36 @@
+CASE 1:
+5	2	 	
+7	6	1	
+8	4	3	
+
+This is impossible to solve!
+No solution
+
+CASE 2:
+
+ 	1	3	
+4	2	6	
+7	5	8	
+
+we need to make 4 move
+
+we move 1 left
+1	 	3	
+4	2	6	
+7	5	8	
+
+we move 2 up
+1	2	3	
+4	 	6	
+7	5	8	
+
+we move 5 up
+1	2	3	
+4	5	6	
+7	 	8	
+
+we move 8 left
+1	2	3	
+4	5	6	
+7	8	 	
+

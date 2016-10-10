@@ -6,8 +6,12 @@ Not every board can be solved, it depends on the parity of the number of inversi
     
      1. the number of inversions is even, and the missing tile must be on the odd row counting from the bottom.
      2. the number of inversions is odd, and the missing tile must be on the even row counting from the bottom.
+ 
+The nubmer of inversions can be calculated efficiently by modifying the mergesort.
 
-If the board can be solved, then we can solve the game by using A* search algorithm. In particular, we create a priority queue such that it it ordered by score which is defined to be the hamming distance + number of moves from the initial state. At each iteration, we pop the one with the smallest score, and explore its next moves, and insert those moves to the priority queue. By the time we pop out the goal board, we are done. 
+
+If the board can be solved, then we can solve the game by using A* search algorithm. In particular, we create a priority queue such that the priority is measured by score which is defined to be the hamming distance + number of moves from the initial state (and if the score are the same, the priority is based on the number of moves). At each iteration, we pop the one with the smallest score, and explore its next moves, and insert those moves to the priority queue. We can record the search tree by recording parent. By the time we pop out the goal board, we can find out the path from the root to the goal board by the recored parent. This path is guaranteed to give the fewest moves.
+
 
 In Board.h, I declare a class Board.
 In Board_Implementation.h, I define the member functions of the class Board.
